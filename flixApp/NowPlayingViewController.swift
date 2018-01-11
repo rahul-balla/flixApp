@@ -49,6 +49,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
             if let error = error {
                 print("error--", error.localizedDescription)
                 self.createAlert(title: "No Network!", message: "Please check if you are connected to the internet")
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+                self.activityIndicator.stopAnimating()
             }
             else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
