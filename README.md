@@ -15,7 +15,7 @@ The following **required** user stories are complete:
 
 The following **optional** user stories are implemented:
 
-- [ ] User sees an alert when there's a networking error (+1pt)
+- [X] User sees an alert when there's a networking error (+1pt)
 - [ ] User can search for a movie (+3pt)
 - [ ] While poster is being fetched, user see's a placeholder image (+1pt)
 - [ ] User sees image transition for images coming from network, not when it is loaded from cache (+1pt)
@@ -35,13 +35,13 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/6v2vmRT.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+In the gif demo, I just wanted to let everyone know that the internet connection was there when I running the app and turned it off to display the alert message
 
 ## License
 
