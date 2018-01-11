@@ -20,6 +20,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     
     var movies: [[String: Any]] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
@@ -39,14 +40,15 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     func fetchMovies(){
 //        activityIndicator.startAnimating()
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
-        
+//        print("url--",url,"--")
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        
+//        print("request--",request,"--")
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        
+//        print("--session",url,"--")
         let task = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
-                print(error.localizedDescription)
+                print("error--", error.localizedDescription)
+                self.createAlert(title: "No Network!", message: "Please check if you are connected to the internet")
             }
             else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
@@ -81,11 +83,20 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         let baseURL = "https://image.tmdb.org/t/p/w500"
         
         let posterURL = URL(string: baseURL + posterPathString)!
-        
         cell.posterImageView.af_setImage(withURL: posterURL)
         
-        
         return cell
+    }
+    
+    func createAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(OKAction)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     
