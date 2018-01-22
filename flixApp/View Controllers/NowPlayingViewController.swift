@@ -44,7 +44,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
 //        print("request--",request,"--")
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-//        print("--session",url,"--")
+        print("--session",url,"--")
         let task = session.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("error--", error.localizedDescription)
@@ -69,6 +69,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("total movies in NowPlayingViewController are ", movies.count)
         return movies.count
     }
     
