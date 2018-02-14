@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iv4-IA-PLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480.8" y="31.934032983508249"/>
+            <point key="canvasLocation" x="1663" y="54"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="lK3-Sp-aYY">
